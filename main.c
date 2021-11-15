@@ -38,11 +38,18 @@ int pcm_s16le_merge(const char* in_lfile, const char* in_rfile, const char* out_
 	}
 
 	char * sample = (char *)malloc(4);
-	while(!feof(fp1) || !feof(fp2)) {
+	while(1) {
+		int readbytes = 0;
 		// L
-		fread(sample, 1, 2, fp1);
+		readbytes += fread(sample, 1, 2, fp1);
 		// R
-		fread(sample + 2, 1, 2, fp2);
+		readbytes += fread(sample + 2, 1, 2, fp2);
+		if(readbytes == 0)
+		{
+			// 没有数据就不要再写入到输出文件中了
+			break;
+		}	
+
 		fwrite(sample, 1, 4, fp);
 	}
 	free(sample);

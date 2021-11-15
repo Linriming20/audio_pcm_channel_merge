@@ -16,6 +16,6 @@ $ ./pcm_channel_merge test_44100_16_1-l.pcm test_44100_16_1-r.pcm test_44100_16_
 例如：
 
 ```bash
-$ ./pcm_channel_merge pcm_file/test_44100_16_1-l.pcm pcm_file/test_44100_16_1-r.pcm test_44100_16_2.pcm
+$ ./pcm_channel_merge ./pcm_file/test_44100_16_1-l.pcm ./pcm_file/test_44100_16_1-r.pcm test_44100_16_2.pcm
 ```
 
