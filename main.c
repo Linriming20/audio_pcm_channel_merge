@@ -8,6 +8,10 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{	
 		printf("Usage: %s in-channel-l.pcm in-channel-r.pcm out-channels-merge.pcm\n", argv[0]);
+		printf("such as:\n"
+			   "\t %s ./audio/test_22050_16_1-l.pcm ./audio/test_22050_16_1-r.pcm out_22050_16_2.pcm\n"
+			   "\t %s ./audio/test_44100_16_1-l.pcm ./audio/test_44100_16_1-r.pcm out_44100_16_2.pcm\n",
+			   argv[0], argv[0]);
 		return -1;
 	}
 
